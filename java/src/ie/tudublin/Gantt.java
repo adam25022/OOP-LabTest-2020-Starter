@@ -89,7 +89,8 @@ public class Gantt extends PApplet
 		{
 			int colour=0;
 			int change=22;
-			int math=task.get(i).getEnd()-task.get(i).getStart();
+			int math=task.get(i).getEnd()-task.get(i).getStart(); //get the difference between start and end point
+			
 			float y = map(i, 0, task.size(), 2 * margin, height - margin);
 			colour=255-(255/(i+1));
 			fill(colour, 255, 255);
@@ -100,7 +101,7 @@ public class Gantt extends PApplet
 			}
 			else
 			{
-				rect(100+((task.get(i).getStart()*change)-(change+i)), y, math*change, 30, 7);
+				rect(100+((task.get(i).getStart()*change)-(change+i)), y, math*change, 30, 7); 
 			}
 			
 		}
