@@ -2,9 +2,14 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
+import java.util.ArrayList;
+import processing.data.Table;
+import processing.data.TableRow;
+
 public class Gantt extends PApplet
 {	
-	
+	public ArrayList<tasks> task = new ArrayList<tasks>();
+
 	public void settings()
 	{
 		size(800, 600);
