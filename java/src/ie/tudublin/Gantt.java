@@ -54,21 +54,24 @@ public class Gantt extends PApplet
 	
 	public void draw()
 	{			
+		
 		background(0);
 		colorMode(HSB);
 		stroke(255);
 		int color=0;
 		int margin =width/25;
 		fill(255);
+		// map the words onto left hand side
 		for(int i=0; i<9; i++)
 		{
 			float y = map(i, 0, task.size(), 2 * margin, height - margin);
 			text(task.get(i).getTasks(), margin, y);
 		}
+		//map the numbers and lines onto the top
 		for(int i=1 ; i<=30; i++)
 		{
-			float x = map(i-1, 0 , 30, 100, width-50);
-			if(color==1)
+			float x = map(i-1, 0 , 30, 100, width-50); //mapped position of number and lines on x axis
+			if(color==1) // alternate colours
 			{
 				stroke(175);
 			}
@@ -79,9 +82,9 @@ public class Gantt extends PApplet
 			text(i, x-2, 35);
 			line(x, height-50, x, 50);
 			color=color+1;
-			color=color%2;
+			color=color%2; //mod to alternate colors
 		}
-
+		//draw the lines using left align as the basis
 		for(int i=0; i<task.size(); i++)
 		{
 			int colour=0;
