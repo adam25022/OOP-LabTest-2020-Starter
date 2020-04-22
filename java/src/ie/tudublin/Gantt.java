@@ -81,5 +81,26 @@ public class Gantt extends PApplet
 			color=color+1;
 			color=color%2;
 		}
+
+		for(int i=0; i<task.size(); i++)
+		{
+			int colour=0;
+			int change=22;
+			int math=task.get(i).getEnd()-task.get(i).getStart();
+			float y = map(i, 0, task.size(), 2 * margin, height - margin);
+			colour=255-(255/(i+1));
+			fill(colour, 255, 255);
+			if(task.get(i).getStart()==1)
+			{
+
+				rect(100+task.get(i).getStart(), y, math*change, 30, 7); // 100 is the distance from the side
+			}
+			else
+			{
+				rect(100+((task.get(i).getStart()*change)-(change+i)), y, math*change, 30, 7);
+			}
+			
+		}
+
 	}
 }
